@@ -1,3 +1,5 @@
-// Central API URL configuration
-// In production, set VITE_API_URL in your deployment environment (e.g. Vercel, Render)
-export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+
+ // Central API URL configuration
+export const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://metromens-backend.onrender.com";
