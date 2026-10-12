@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
@@ -6,10 +7,7 @@ function Navbar() {
   const { cartCount } = useCart();
   const navigate = useNavigate();
 
-  const tapCount = useRef(0);
-  const tapTimer = useRef(null);
-
-  // Laptop: Command + Shift + A
+  // Laptop shortcut: Command + Shift + A
   useEffect(() => {
     function handleKeyDown(event) {
       if (
@@ -29,33 +27,11 @@ function Navbar() {
     };
   }, [navigate]);
 
-  // Mobile: tap the logo 5 times
-  function handleLogoTap() {
-    tapCount.current += 1;
-
-    clearTimeout(tapTimer.current);
-
-    if (tapCount.current >= 5) {
-      tapCount.current = 0;
-      navigate("/admin");
-      return;
-    }
-
-    tapTimer.current = setTimeout(() => {
-      tapCount.current = 0;
-    }, 2000);
-  }
-
-  useEffect(() => {
-    return () => clearTimeout(tapTimer.current);
-  }, []);
-
   return (
     <nav className="navbar">
       <Link
         to="/"
         className="logo"
-        onClick={handleLogoTap}
         aria-label="Metro Mens Wear home"
       >
         METRO
@@ -67,6 +43,9 @@ function Navbar() {
         <Link to="/shop">Shop</Link>
         <a href="/#about">About</a>
         <a href="/#store">Store</a>
+        <Link to="/admin" className="admin-link">
+          Admin Login
+        </Link>
       </div>
 
       <div className="nav-actions">
