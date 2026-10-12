@@ -1262,7 +1262,11 @@ display: block;
 @media (max-width: 900px) {
 
   .nav-links {
-    display: none;
+    display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+    
   }
 
   .hero {
