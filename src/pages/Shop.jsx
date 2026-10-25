@@ -52,9 +52,9 @@ function Shop() {
       } catch (error) {
         console.error(error);
 
-        setError(
-          "Products load nahi ho rahe. Backend check karo."
-        );
+      setError(
+  `Products load nahi ho rahe: ${error.message}`
+);
       } finally {
         setLoading(false);
       }
