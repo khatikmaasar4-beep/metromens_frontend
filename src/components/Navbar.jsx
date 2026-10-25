@@ -43,9 +43,7 @@ function Navbar() {
         <Link to="/shop">Shop</Link>
         <a href="/#about">About</a>
         <a href="/#store">Store</a>
-        <Link to="/admin" className="admin-link">
-          Admin Login
-        </Link>
+        <Link to="/admin" className="admin-nav-link">Admin Login</Link>
       </div>
 
       <div className="nav-actions">

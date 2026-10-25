@@ -1262,11 +1262,7 @@ display: block;
 @media (max-width: 900px) {
 
   .nav-links {
-    display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 12px;
-    
+    gap: 20px;
   }
 
   .hero {
@@ -1310,6 +1306,20 @@ gap: 12px;
 
   .logo {
     font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .admin-nav-link {
+    color: #666 !important;
+    font-size: 9px !important;
   }
 
   .hero {
